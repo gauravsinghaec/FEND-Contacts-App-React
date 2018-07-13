@@ -6,7 +6,7 @@ class App extends Component {
   state = {
     contacts : []
   }
-
+  //Fetch contacts from server
   componentDidMount(){
     ContactsAPI.getAll()
     .then((contacts)=> {
@@ -18,6 +18,8 @@ class App extends Component {
     this.setState((state)=>({
       contacts : state.contacts.filter((c)=> c.id !== contact.id)
     }))
+    //Remove contact from server
+    ContactsAPI.remove(contact);
   }
   render() {
     return (
