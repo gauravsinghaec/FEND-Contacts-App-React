@@ -23,13 +23,20 @@ class App extends Component {
     //Remove contact from server
     ContactsAPI.remove(contact);
   }
+
+  addNewContact = () => {
+    this.setState({screen: 'create'});
+  }
+
   render() {
     return (
       <div className='app'>
         {this.state.screen === 'list' && (
           <ListContact
           onDeleteContact={this.removeContact}
-          contacts={this.state.contacts}/>
+          contacts={this.state.contacts}
+          onAddContact={this.addNewContact}
+          />
         )}
         {this.state.screen === 'create' && (
           <CreateContact />
