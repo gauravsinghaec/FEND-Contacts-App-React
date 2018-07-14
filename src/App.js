@@ -43,9 +43,16 @@ class App extends Component {
           contacts={this.state.contacts}
           />
         )}/>
-        <Route exact path='/create' render={() => (
+        <Route exact path='/create' render={ ({history}) => (
           <CreateContact
-            onAddContact={this.addContact}
+            onAddContact={(contact) => {
+              this.addContact(contact);
+              /* Once contact added , history objects is used to programmatically
+               * change the current location to home using push() method
+               */
+              history.push('/');
+            }
+          }
           />
         )}/>
       </div>
