@@ -34,14 +34,19 @@ class ListContact extends Component{
 		showContacts.sort(sortBy('name'));
 
 	    return (
-	    	<div className='contacts'>
-	    	<div className='contacts-top'>
+	    	<div className='list-contacts'>
+	    	<div className='list-contacts-top'>
 	    		<input type='text'
 	    			className='search-contacts'
 	    			placeholder='Search contacts'
 	    			value={query}
 	    			onChange={(event)=> this.updateQuery(event.target.value)}
 	    		/>
+	    		<a href='#create'
+	    			className='add-contact'
+	    			onClick={()=> {}}>
+	    			Add Contact
+	    		</a>
 	    	</div>
 	    	{contacts.length !== showContacts.length && (
 				<div className="showing-contacts">
