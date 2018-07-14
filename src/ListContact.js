@@ -24,7 +24,7 @@ class ListContact extends Component{
 	};
 
 	render(){
-		const { contacts,onDeleteContact,onAddContact } = this.props;
+		const { contacts,onDeleteContact } = this.props;
 		const { query } = this.state;
 
 		let showContacts = contacts;
@@ -45,8 +45,7 @@ class ListContact extends Component{
 	    		/>
 	    		<Link
 	    			to='/create'
-	    			className='add-contact'
-	    			onClick={()=> onAddContact()}>
+	    			className='add-contact'>
 	    			Add Contact
 	    		</Link>
 	    	</div>
